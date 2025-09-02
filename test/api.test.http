@@ -1,0 +1,60 @@
+### Test open long position
+POST http://localhost:3000/api/exchange/position/long/open
+Content-Type: application/json
+
+{
+  "exchangeType": "binance",
+  "symbol": "BTC-USDT",
+  "quantity": 0.01,
+  "leverage": 10
+}
+
+### Test open short position
+POST http://localhost:3000/api/exchange/position/short/open
+Content-Type: application/json
+
+{
+  "exchangeType": "binance",
+  "symbol": "BTC-USDT",
+  "quantity": 0.01,
+  "leverage": 10
+}
+
+### Test close long position
+POST http://localhost:3000/api/exchange/position/long/close
+Content-Type: application/json
+
+{
+  "exchangeType": "binance",
+  "symbol": "BTC-USDT",
+  "quantity": 0.01
+}
+
+### Test close short position
+POST http://localhost:3000/api/exchange/position/short/close
+Content-Type: application/json
+
+{
+  "exchangeType": "binance",
+  "symbol": "BTC-USDT",
+  "quantity": 0.01
+}
+
+### Get account balance
+GET http://localhost:3000/api/exchange/account/balance?exchangeType=binance
+
+### Get total asset value
+GET http://localhost:3000/api/exchange/account/total-value?exchangeType=binance
+
+### Get position profit for a specific symbol
+GET http://localhost:3000/api/exchange/profit/BTC-USDT?exchangeType=binance
+
+### Get position profit for a specific symbol with position side
+GET http://localhost:3000/api/exchange/profit/BTC-USDT?exchangeType=binance&positionSide=long
+
+### Get all profits
+GET http://localhost:3000/api/exchange/profit?exchangeType=binance
+
+### Test with OKX exchange
+### Get account balance from OKX
+GET http://localhost:3000/api/exchange/account/balance?exchangeType=okx
