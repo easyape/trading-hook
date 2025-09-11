@@ -8,7 +8,7 @@ import {
   createExchange,
   ExchangeFactoryConfig,
   ExchangeType
-} from '../../exchange';
+} from './index';
 
 @Injectable()
 export class ExchangeService {

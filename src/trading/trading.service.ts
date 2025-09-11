@@ -1,15 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
-import { CreateTradingHistoryDto } from './dto/create-trading-history.dto';
-import { OrderStatus } from './enums/trading.enums';
+import { CreateTradingDto } from './dto/create-trading.dto';
+import { OrderStatus } from '@prisma/client';
 
 @Injectable()
 export class TradingService {
   constructor(private prisma: PrismaService) {}
 
-  async createTradingHistory(createTradingHistoryDto: CreateTradingHistoryDto) {
+  async createTradingHistory(createTradingDto: CreateTradingDto) {
     return this.prisma.tradingHistory.create({
-      data: createTradingHistoryDto,
+      data: createTradingDto,
     });
   }
 
