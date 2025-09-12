@@ -14,7 +14,7 @@ export class TradingController {
     private readonly usersService: UsersService
   ) {}
 
-    @Get('balance1/:exchangeType')
+    @Get('balance/:exchangeType')
     async getAccountBalance(@Param('exchangeType') exchangeType: string): Promise<AccountBalance[]> {
       // Convert to lowercase and validate as ExchangeType
       const exchange = exchangeType.toLowerCase() as ExchangeType;
